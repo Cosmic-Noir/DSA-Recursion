@@ -1,0 +1,20 @@
+{
+  "name": "DSA-Recursion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "recursion.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cosmic-Noir/DSA-Recursion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cosmic-Noir/DSA-Recursion/issues"
+  },
+  "homepage": "https://github.com/Cosmic-Noir/DSA-Recursion#readme"
+}
