@@ -24,4 +24,18 @@ const powerCalculator = (int, exp) => {
   console.log(int ** exp);
 };
 
-powerCalculator(10, 2);
+// powerCalculator(10, 2);
+
+// Reverse String
+
+const reverse = string => {
+  // base
+  if (string === "") {
+    return "";
+  } else {
+    // general
+    return reverse(string.substr(1)) + string.charAt(0);
+  }
+};
+
+console.log(reverse("abc"));
