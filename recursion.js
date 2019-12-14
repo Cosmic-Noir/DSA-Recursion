@@ -89,4 +89,18 @@ const fibonacci = num => {
   }
 };
 
-console.log(fibonacci(7));
+// console.log(fibonacci(7));
+
+// Factorial
+
+const factorial = number => {
+  // base
+  if (number === 1) {
+    return 1;
+  } else {
+    // general
+    return number * factorial(number - 1);
+  }
+};
+
+console.log(factorial(5));
