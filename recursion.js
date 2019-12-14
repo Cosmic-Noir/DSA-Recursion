@@ -153,4 +153,15 @@ let maze = [
   [" ", " ", " ", " ", " ", " ", "e"]
 ];
 
-console.log(mazeRunner(maze));
+// console.log(mazeRunner(maze));
+
+// Anagrams
+const anagram = string => {
+  const perms = [];
+  // base
+  if (string.length === 1) {
+    perms.push(string);
+    return string;
+  } else {
+  }
+};
