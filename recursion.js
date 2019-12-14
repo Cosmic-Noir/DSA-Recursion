@@ -103,4 +103,54 @@ const factorial = number => {
   }
 };
 
-console.log(factorial(5));
+// console.log(factorial(5));
+
+// Way out of maze
+let path = "";
+let row = 0;
+let column = 0;
+
+const mazeRunner = arrayMaze => {
+  if (arrayMaze[row][column] === "e") {
+    console.log("Maze escaped!");
+    return path;
+  } else if (arrayMaze[row][column + 1] === " ") {
+    column += 1;
+    console.log("column is now column: " + column);
+
+    // console.log(arrayMaze[row][column]);
+
+    path += "R";
+    console.log(path);
+    mazeRunner(arrayMaze);
+  } else if (
+    arrayMaze[row][column] === "*" &&
+    arrayMaze[row + 1][column] === " "
+  ) {
+    row += 1;
+    path += "D";
+    console.log("row is now row: " + row);
+
+    console.log(path);
+    mazeRunner(arrayMaze);
+  } else if (
+    (column = arrayMaze[0].length || arrayMaze[row + 1][column] !== "*")
+  ) {
+    row += 1;
+    path += "D";
+    console.log("row is now row: " + row);
+
+    console.log(path);
+    mazeRunner(arrayMaze);
+  }
+};
+
+let maze = [
+  [" ", " ", " ", "*", " ", " ", " "],
+  ["*", "*", " ", "*", " ", "*", " "],
+  [" ", " ", " ", " ", " ", " ", " "],
+  [" ", "*", "*", "*", "*", "*", " "],
+  [" ", " ", " ", " ", " ", " ", "e"]
+];
+
+console.log(mazeRunner(maze));
