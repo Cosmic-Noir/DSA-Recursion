@@ -38,4 +38,18 @@ const reverse = string => {
   }
 };
 
-console.log(reverse("abc"));
+// console.log(reverse("abc"));
+
+// nth Triangular Number
+
+const triNum = n => {
+  // base
+  if (n === 1) {
+    return 1;
+  } else {
+    // general
+    return n + triNum(n - 1);
+  }
+};
+
+console.log(triNum(5));
