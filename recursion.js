@@ -76,4 +76,17 @@ const stringSplitter = string => {
   }
 };
 
-console.log(stringSplitter("02/20/2020"));
+// console.log(stringSplitter("02/20/2020"));
+
+// Fibonacci
+const fibonacci = num => {
+  // base
+  if (num <= 2) {
+    return 1;
+  } else {
+    // general
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
+};
+
+console.log(fibonacci(7));
