@@ -52,4 +52,28 @@ const triNum = n => {
   }
 };
 
-console.log(triNum(5));
+// console.log(triNum(5));
+
+// String splitter
+const myArray = [];
+
+const stringSplitter = string => {
+  // base
+  if (!string.includes("/")) {
+    myArray.push(string);
+    console.log(string);
+    return myArray;
+  } else {
+    const index = string.indexOf("/");
+    // console.log(index);
+    let num = string.substr(0, index);
+    // console.log(num);
+    myArray.push(num);
+    // console.log(myArray);
+    let slicedString = string.slice(index + 1);
+    // console.log(slicedString);
+    stringSplitter(slicedString);
+  }
+};
+
+console.log(stringSplitter("02/20/2020"));
