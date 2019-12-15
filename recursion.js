@@ -108,40 +108,30 @@ const factorial = number => {
 // Way out of maze
 let path = "";
 let row = 0;
-let column = 0;
+let col = 0;
 
-const mazeRunner = arrayMaze => {
-  if (arrayMaze[row][column] === "e") {
+const mazeRunner = maze => {
+  // Base
+  if (maze[row][col] === "e") {
     console.log("Maze escaped!");
     return path;
-  } else if (arrayMaze[row][column + 1] === " ") {
-    column += 1;
-    console.log("column is now column: " + column);
-
-    // console.log(arrayMaze[row][column]);
-
+  } else if (maze[row][col + 1] === " ") {
+    // If path to right is open, move right
+    col += 1;
     path += "R";
     console.log(path);
-    mazeRunner(arrayMaze);
+    mazeRunner(maze);
   } else if (
-    arrayMaze[row][column] === "*" &&
-    arrayMaze[row + 1][column] === " "
+    maze[row][col + 1] === "*" ||
+    (maze[row][col + 1] === undefined && maze[row + 1][col] === " ") ||
+      maze[row + 1][col] === "e"
   ) {
+    // If path to the right is closed, and path down is open, move down
     row += 1;
     path += "D";
-    console.log("row is now row: " + row);
-
     console.log(path);
-    mazeRunner(arrayMaze);
-  } else if (
-    (column = arrayMaze[0].length || arrayMaze[row + 1][column] !== "*")
-  ) {
-    row += 1;
-    path += "D";
-    console.log("row is now row: " + row);
 
-    console.log(path);
-    mazeRunner(arrayMaze);
+    mazeRunner(maze);
   }
 };
 
@@ -153,15 +143,15 @@ let maze = [
   [" ", " ", " ", " ", " ", " ", "e"]
 ];
 
-// console.log(mazeRunner(maze));
+console.log(mazeRunner(maze));
 
 // Anagrams
-const anagram = string => {
-  const perms = [];
-  // base
-  if (string.length === 1) {
-    perms.push(string);
-    return string;
-  } else {
-  }
-};
+// const anagram = string => {
+//   const perms = [];
+//   // base
+//   if (string.length === 1) {
+//     perms.push(string);
+//     return string;
+//   } else {
+//   }
+// };
