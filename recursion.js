@@ -124,7 +124,7 @@ const mazeRunner = maze => {
   } else if (
     maze[row][col + 1] === "*" ||
     (maze[row][col + 1] === undefined && maze[row + 1][col] === " ") ||
-      maze[row + 1][col] === "e"
+    maze[row + 1][col] === "e"
   ) {
     // If path to the right is closed, and path down is open, move down
     row += 1;
@@ -143,15 +143,25 @@ let maze = [
   [" ", " ", " ", " ", " ", " ", "e"]
 ];
 
-console.log(mazeRunner(maze));
+// console.log(mazeRunner(maze));
 
 // Anagrams
-// const anagram = string => {
-//   const perms = [];
-//   // base
-//   if (string.length === 1) {
-//     perms.push(string);
-//     return string;
-//   } else {
-//   }
-// };
+const anagram = string => {
+  const permutations = [];
+
+  if (string.length === 1) {
+    // base case
+    return string;
+  } else {
+    for (let i = 0; i < string.length; i++) {
+      const word = string.substring(0, i) + string.substring(i + 1);
+      const results = anagram(word);
+      for (let j = 0; j < results.length; j++) {
+        permutations.push(string[i] + results[j]);
+      }
+    }
+  }
+  return permutations;
+};
+
+console.log(anagram("cats"));
