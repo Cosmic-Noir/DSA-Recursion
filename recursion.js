@@ -164,4 +164,20 @@ const anagram = string => {
   return permutations;
 };
 
-console.log(anagram("cats"));
+// console.log(anagram("cats"));
+
+// Organization Chart
+
+// Convert number to binary
+
+const binary = num => {
+  // base
+  console.log(num);
+  if (num === 0) {
+    return 0;
+  } else {
+    return (num % 2) + 10 * binary(Math.floor(num / 2));
+  }
+};
+
+console.log(binary(3));
